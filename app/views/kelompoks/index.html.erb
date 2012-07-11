@@ -1,0 +1,29 @@
+<h1>Listing kelompoks</h1>
+
+<table>
+  <tr>
+    <th>Kode</th>
+    <th>Jenis</th>
+    <th>Keterangan</th>
+    <th>Parent</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @kelompoks.each do |kelompok| %>
+  <tr>
+    <td><%= kelompok.kode %></td>
+    <td><%= kelompok.jenis %></td>
+    <td><%= kelompok.keterangan %></td>
+    <td><%= kelompok.parent_id %></td>
+    <td><%= link_to 'Show', kelompok %></td>
+    <td><%= link_to 'Edit', edit_kelompok_path(kelompok) %></td>
+    <td><%= link_to 'Destroy', kelompok, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Kelompok', new_kelompok_path %>

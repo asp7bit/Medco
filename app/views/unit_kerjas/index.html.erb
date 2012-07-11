@@ -1,0 +1,25 @@
+<h1>Listing unit_kerjas</h1>
+
+<table>
+  <tr>
+    <th>Kode</th>
+    <th>Keterangan</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @unit_kerjas.each do |unit_kerja| %>
+  <tr>
+    <td><%= unit_kerja.kode %></td>
+    <td><%= unit_kerja.keterangan %></td>
+    <td><%= link_to 'Show', unit_kerja %></td>
+    <td><%= link_to 'Edit', edit_unit_kerja_path(unit_kerja) %></td>
+    <td><%= link_to 'Destroy', unit_kerja, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Unit kerja', new_unit_kerja_path %>

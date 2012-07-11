@@ -1,0 +1,25 @@
+<%= form_for(@tanah) do |f| %>
+  <% if @tanah.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tanah.errors.count, "error") %> prohibited this tanah from being saved:</h2>
+
+      <ul>
+      <% @tanah.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kode %><br />
+    <%= f.text_field :kode %>
+  </div>
+  <div class="field">
+    <%= f.label :keterangan %><br />
+    <%= f.text_area :keterangan %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

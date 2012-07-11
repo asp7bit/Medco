@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  kode: MyString
+  jenis: MyString
+  keterangan: MyString
+  parent_id: MyString
+
+two:
+  kode: MyString
+  jenis: MyString
+  keterangan: MyString
+  parent_id: MyString

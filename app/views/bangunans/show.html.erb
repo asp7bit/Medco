@@ -1,0 +1,16 @@
+<article class="module width_full">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <b>Kode:</b>
+    <%= @bangunan.kode %>
+  </p>
+
+  <p>
+    <b>Keterangan:</b>
+    <%= @bangunan.keterangan %>
+  </p>
+	
+  <%= link_to 'Edit', edit_bangunan_path(@bangunan) %> |
+  <%= link_to 'Back', bangunans_path %>
+</article>
