@@ -5,11 +5,11 @@
   <hr/>
     <h3>Master</h3>
 	<ul class="toggle">
-	  <li class="icn_new_article"><a href="#">Divisi</a></li>
-	  <li class="icn_edit_article"><a href="#">Unit Kerja</a></li>
+	  <li class="icn_new_article"><%= link_to "Divisi", divisis_path %></li>
+	  <li class="icn_edit_article"><%= link_to "Unit kerja", unit_kerjas_path %></li>
 	  <li class="icn_categories"><%=link_to "Bangunan", bangunans_path %></li>
-	  <li class="icn_tags"><a href="#">Peralatan</a></li>
-	  <li class="icn_tags"><a href="#">Tanah</a></li>
+	  <li class="icn_tags"><%= link_to "Kelompok Asset", kelompoks_path %></li>
+	  <li class="icn_tags"><%= link_to "Tanah", tanahs_path %></li>
 	</ul>
 	<h3>Transaksi</h3>
 	<ul class="toggle">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120706155217) do
+ActiveRecord::Schema.define(:version => 20120713174045) do
 
   create_table "bangunans", :force => true do |t|
     t.string   "kode"
@@ -27,20 +27,27 @@ ActiveRecord::Schema.define(:version => 20120706155217) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "kendaraans", :force => true do |t|
+  create_table "kelompoks", :id => false, :force => true do |t|
     t.string   "kode"
-    t.text     "keterangan"
-    t.string   "kode_parent"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "jenis"
+    t.string   "keterangan"
+    t.string   "parent_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "peralatans", :force => true do |t|
+  create_table "tanahs", :force => true do |t|
     t.string   "kode"
     t.text     "keterangan"
-    t.string   "kode_parent"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "unit_kerjas", :force => true do |t|
+    t.string   "kode"
+    t.string   "keterangan"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

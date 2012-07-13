@@ -1,9 +1,10 @@
 class KelompoksController < ApplicationController
+before_filter :set_parent_category, :only => [:edit, :new, :create]
   # GET /kelompoks
   # GET /kelompoks.json
   def index
     @kelompoks = Kelompok.all
-
+    @parent_name = Kelompok.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @kelompoks }
@@ -41,7 +42,7 @@ class KelompoksController < ApplicationController
   # POST /kelompoks.json
   def create
     @kelompok = Kelompok.new(params[:kelompok])
-
+    @kelompok.parent_id=nil if @kelompok.parent_id.empty?
     respond_to do |format|
       if @kelompok.save
         format.html { redirect_to @kelompok, notice: 'Kelompok was successfully created.' }
@@ -79,5 +80,10 @@ class KelompoksController < ApplicationController
       format.html { redirect_to kelompoks_url }
       format.json { head :no_content }
     end
+  end
+  
+    private
+  def set_parent_category
+     @parent_kelompok = Kelompok.where(["parent_id IS NULL"]).map{|x| [x.keterangan, x.kode]}
   end
 end

@@ -3,11 +3,11 @@
 one:
   kode: MyString
   jenis: MyString
-  keterangan: MyString
+  keterangan: MyText
   parent_id: MyString
 
 two:
   kode: MyString
   jenis: MyString
-  keterangan: MyString
+  keterangan: MyText
   parent_id: MyString

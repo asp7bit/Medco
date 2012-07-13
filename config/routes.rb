@@ -1,9 +1,9 @@
 Medco::Application.routes.draw do
+  resources :kelompoks
+
   resources :tanahs
 
   resources :bangunans
-
-  resources :kelompoks
 
   resources :unit_kerjas
 
