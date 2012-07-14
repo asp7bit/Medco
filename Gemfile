@@ -5,10 +5,9 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'execjs'
-gem 'therubyracer'
 gem 'mysql2'
+gem "friendly_id", "~> 4.0.1"
+gem 'aasm'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,7 +24,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -43,6 +42,7 @@ group :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'simplecov'
 end
 
 group :cucumber do
@@ -56,3 +56,5 @@ group :cucumber do
  #gem 'factory_girl_rails'
  gem 'launchy'    # So you can do Then show me the page
 end
+
+gem 'will_paginate', '~> 3.0'

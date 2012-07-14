@@ -1,4 +1,6 @@
 Medco::Application.routes.draw do
+  resources :users
+
   resources :kelompoks
 
   resources :tanahs
