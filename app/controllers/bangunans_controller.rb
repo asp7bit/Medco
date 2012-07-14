@@ -1,4 +1,5 @@
 class BangunansController < ApplicationController
+  #ALREADY TEST COYY!! 15/07/2012 23.30
   # GET /bangunans
   # GET /bangunans.json
   def index
