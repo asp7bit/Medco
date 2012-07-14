@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714060920) do
+ActiveRecord::Schema.define(:version => 20120713175128) do
 
   create_table "bangunans", :force => true do |t|
     t.string   "kode"
