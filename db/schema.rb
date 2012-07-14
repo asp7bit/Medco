@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120713174045) do
+ActiveRecord::Schema.define(:version => 20120713175128) do
 
   create_table "bangunans", :force => true do |t|
     t.string   "kode"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(:version => 20120713174045) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "kelompoks", :id => false, :force => true do |t|
+  create_table "kelompoks", :force => true do |t|
     t.string   "kode"
     t.string   "jenis"
-    t.string   "keterangan"
+    t.text     "keterangan"
     t.string   "parent_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
