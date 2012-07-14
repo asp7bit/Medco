@@ -1,0 +1,28 @@
+<table>
+  <tr>
+	  <th><%= sortable "no", "No" %></th>
+    <th><%= sortable "kode", "Kode" %></th>
+    <th><%= sortable "keterangan", "Keterangan" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bangunans.each_with_index do |bangunan, idx| %>
+  <tr>
+	  <td><%= params[:page].nil? ? idx + 1 : 15 * (params[:page].to_i  - 1) + idx + 1 %></td>
+    <td><%= bangunan.kode %></td>
+    <td><%= bangunan.keterangan %></td>
+    <td><%= link_to 'Show', bangunan %></td>
+    <td><%= link_to 'Edit', edit_bangunan_path(bangunan) %></td>
+    <td><%= link_to 'Destroy', bangunan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+  <div class="pagination">
+   <%= will_paginate @bangunans %>
+  </div>
+<br />
+
+<%= link_to 'New Bangunan', new_bangunan_path, :rel=>"lightbox" %>
+<a href="#" class="lightbox">Open Lightbox</a>

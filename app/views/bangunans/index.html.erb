@@ -1,29 +1,13 @@
 <h1>Listing bangunans</h1>
-
-<table>
-  <tr>
-    <th>Kode</th>
-    <th>Keterangan</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @bangunans.each do |bangunan| %>
-  <tr>
-    <td><%= bangunan.kode %></td>
-    <td><%= bangunan.keterangan %></td>
-    <td><%= link_to 'Show', bangunan %></td>
-    <td><%= link_to 'Edit', edit_bangunan_path(bangunan) %></td>
-    <td><%= link_to 'Destroy', bangunan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Bangunan', new_bangunan_path, :rel=>"lightbox" %>
-<a href="#" class="lightbox">Open Lightbox</a>
+  <%= form_tag bangunans_path, :method => 'get', :id => "bangunans_search" do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+    <p>
+      <%= text_field_tag :search, params[:search], :class => "input-xlarge" %>
+      <%= submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
+    </p>
  
-	<div class="backdrop"></div>
-	<div class="box"><div class="close">x</div>This is the lightbox!!!</div>
+  <% end %>
+	<div>
+    <%= render 'bangunans' %>
+  </div>

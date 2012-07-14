@@ -1,9 +1,9 @@
 class BangunansController < ApplicationController
-  #ALREADY TEST COYY!! 15/07/2012 23.30
+  helper_method :sort_column, :sort_direction
   # GET /bangunans
   # GET /bangunans.json
   def index
-    @bangunans = Bangunan.all
+    @bangunans = Bangunan.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -81,4 +81,15 @@ class BangunansController < ApplicationController
       format.json { head :no_content }
     end
   end
+	
+	private
+	#sorting column user
+   def sort_column
+     Bangunan.column_names.include?(params[:sort]) ? params[:sort] : "kode"
+   end
+  
+  #managing asc and desc
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
 end
