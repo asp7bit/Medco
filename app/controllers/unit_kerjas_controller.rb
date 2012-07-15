@@ -1,8 +1,9 @@
 class UnitKerjasController < ApplicationController
+  helper_method :sort_column, :sort_direction
   # GET /unit_kerjas
   # GET /unit_kerjas.json
   def index
-    @unit_kerjas = UnitKerja.all
+    @unit_kerjas = UnitKerja.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,15 @@ class UnitKerjasController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+	#sorting column Unit Kerja
+   def sort_column
+     UnitKerja.column_names.include?(params[:sort]) ? params[:sort] : "kode"
+   end
+  
+  #managing asc and desc
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
 end

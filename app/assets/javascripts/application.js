@@ -98,13 +98,4 @@ $(function(){
 			$('.backdrop, .box').css('display', 'none');
 		});
 	}
-	
-	$("#bangunans th a, #bangunans .pagination a").live("click", function() {
-    $.getScript(this.href);
-    return false;
-  });
 
-  $("#bangunans_search input").keyup(function() {
-    $.get($("#bangunans_search").attr("action"), $("#bangunans_search").serialize(), null, "script");
-    return false;
-  });

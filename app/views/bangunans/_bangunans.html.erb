@@ -3,9 +3,7 @@
 	  <th><%= sortable "no", "No" %></th>
     <th><%= sortable "kode", "Kode" %></th>
     <th><%= sortable "keterangan", "Keterangan" %></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="2">Action</th>
   </tr>
 
 <% @bangunans.each_with_index do |bangunan, idx| %>
@@ -13,9 +11,8 @@
 	  <td><%= params[:page].nil? ? idx + 1 : 15 * (params[:page].to_i  - 1) + idx + 1 %></td>
     <td><%= bangunan.kode %></td>
     <td><%= bangunan.keterangan %></td>
-    <td><%= link_to 'Show', bangunan %></td>
     <td><%= link_to 'Edit', edit_bangunan_path(bangunan) %></td>
-    <td><%= link_to 'Destroy', bangunan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', bangunan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -1,8 +1,9 @@
 class DivisisController < ApplicationController
+  helper_method :sort_column, :sort_direction
   # GET /divisis
   # GET /divisis.json
   def index
-    @divisis = Divisi.all
+    @divisis = Divisi.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,15 @@ class DivisisController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+	#sorting column divisi
+   def sort_column
+     Divisi.column_names.include?(params[:sort]) ? params[:sort] : "kode"
+   end
+  
+  #managing asc and desc
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
 end

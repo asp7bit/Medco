@@ -1,8 +1,9 @@
 class TanahsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   # GET /tanahs
   # GET /tanahs.json
   def index
-    @tanahs = Tanah.all
+    @tanahs = Tanah.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +81,15 @@ class TanahsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+	#sorting column tanah
+   def sort_column
+     Tanah.column_names.include?(params[:sort]) ? params[:sort] : "kode"
+   end
+  
+  #managing asc and desc
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
 end

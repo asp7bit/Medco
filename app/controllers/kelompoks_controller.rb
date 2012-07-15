@@ -1,9 +1,10 @@
 class KelompoksController < ApplicationController
-before_filter :set_parent_category, :only => [:edit, :new, :create]
+  before_filter :set_parent_category, :only => [:edit, :new, :create]
+  helper_method :sort_column, :sort_direction
   # GET /kelompoks
   # GET /kelompoks.json
   def index
-    @kelompoks = Kelompok.all
+    @kelompoks = Kelompok.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
     @parent_name = Kelompok.all
     respond_to do |format|
       format.html # index.html.erb
@@ -82,8 +83,18 @@ before_filter :set_parent_category, :only => [:edit, :new, :create]
     end
   end
   
-    private
+  private
   def set_parent_category
      @parent_kelompok = Kelompok.where(["parent_id IS NULL"]).map{|x| [x.keterangan, x.kode]}
   end
+  
+	#sorting column Kelompok Asset
+   def sort_column
+     UnitKerja.column_names.include?(params[:sort]) ? params[:sort] : "kode"
+   end
+  
+  #managing asc and desc
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
 end

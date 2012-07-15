@@ -83,7 +83,7 @@ class BangunansController < ApplicationController
   end
 	
 	private
-	#sorting column user
+	#sorting column bangunan
    def sort_column
      Bangunan.column_names.include?(params[:sort]) ? params[:sort] : "kode"
    end

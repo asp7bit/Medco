@@ -1,25 +1,13 @@
 <h1>Listing unit_kerjas</h1>
-
-<table>
-  <tr>
-    <th>Kode</th>
-    <th>Keterangan</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @unit_kerjas.each do |unit_kerja| %>
-  <tr>
-    <td><%= unit_kerja.kode %></td>
-    <td><%= unit_kerja.keterangan %></td>
-    <td><%= link_to 'Show', unit_kerja %></td>
-    <td><%= link_to 'Edit', edit_unit_kerja_path(unit_kerja) %></td>
-    <td><%= link_to 'Destroy', unit_kerja, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Unit kerja', new_unit_kerja_path %>
+<%= form_tag unit_kerjas_path, :method => 'get', :id => "unit_kerjas_search" do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+    <p>
+      <%= text_field_tag :search, params[:search], :class => "input-xlarge" %>
+      <%= submit_tag "Search", :name => nil, :class => "btn btn-primary" %>
+    </p>
+ 
+  <% end %>
+	<div>
+    <%= render 'unit_kerjas' %>
+  </div>
