@@ -1,141 +1,47 @@
-
-<article class="module width_half">
-  <header>
-    <h3 class="tabs_involved">Penerimaan Manager</h3>
-    <ul class="tabs">
-      <li><a href="#tab1">Posts</a></li>
-      <li><a href="#tab2">Comments</a></li>
-    </ul>
-  </header>
-    <div class="tab_container">
-      <div id="tab1" class="tab_content">
-        <table class="tablesorter" cellspacing="0"> 
-          <thead>
-            <tr> 
-              <th>No.</th> 
-              <th>Entry Name</th> 
-              <th>Category</th> 
-              <th>Created On</th> 
-              <th>Actions</th>
-            </tr> 
-          </thead> 
-          <tbody> 
-		    <% @bangunans.each do |bangunan| %>
-            <tr> 
-              <td><%= bangunan.kode %></td> 
-              <td><%= bangunan.keterangan %></td> 
-              <td>Articles</td> 
-              <td>5th April 2011</td> 
-              <td>
-                <%= link_to "Edit", edit_bangunan_path(bangunan) %>
-                <%= image_submit_tag "icn_trash.png", :title => "Destroy" %>
-              </td> 
-            </tr> 
-	      <% end %>
-          </tbody>
-           </table>
-         </div>
-         <div id="tab2" class="tab_content">
-           <table class="tablesorter" cellspacing="0">
-             <thead>
-               <tr>
-                 <th></th>
-                 <th>Comment</th>
-                 <th>Posted by</th>
-                 <th>Posted On</th>
-                 <th>Actions</th>
-               </tr>
-             </thead>
-             <tbody>
-               <tr>
-                 <td><input type="checkbox"></td>
-                 <td>Lorem Ipsum Dolor Sit Amet</td>
-                 <td>Mark Corrigan</td>
-                 <td>5th April 2011</td>
-                 <td>
-                   <input type="image" src="images/icn_edit.png" title="Edit">
-                   <input type="image" src="images/icn_trash.png" title="Trash">
-                 </td>
-               </tr>
-               <tr>
-                 <td><input type="checkbox"></td>
-                 <td>Ipsum Lorem Dolor Sit Amet</td>
-                 <td>Jeremy Usbourne</td>
-                 <td>6th April 2011</td>
-                 <td>
-                   <input type="image" src="images/icn_edit.png" title="Edit">
-                   <input type="image" src="images/icn_trash.png" title="Trash">
-                 </td>
-               </tr>
-               <tr>
-                 <td><input type="checkbox"></td>
-                 <td>Sit Amet Dolor Ipsum</td>
-                 <td>Super Hans</td>
-                 <td>10th April 2011</td>
-                 <td>
-                   <input type="image" src="images/icn_edit.png" title="Edit">
-                   <input type="image" src="images/icn_trash.png" title="Trash">
-                 </td>
-               </tr>
-               <tr>
-                 <td><input type="checkbox"></td>
-                 <td>Dolor Lorem Amet</td>
-                 <td>Alan Johnson</td>
-                 <td>16th April 2011</td>
-                 <td>
-                   <input type="image" src="images/icn_edit.png" title="Edit">
-                   <input type="image" src="images/icn_trash.png" title="Trash">
-                 </td>
-               </tr>
-               <tr>
-                 <td><input type="checkbox"></td>
-                 <td>Dolor Lorem Amet</td>
-                 <td>Dobby</td>
-                 <td>16th April 2011</td>
-                 <td>
-                   <input type="image" src="images/icn_edit.png" title="Edit">
-                   <input type="image" src="images/icn_trash.png" title="Trash">
-                 </td>
-               </tr>
-             </tbody>
-           </table>
-         </div>
-       </div>
-      </article>
-	  
-
-	<article class="module width_half">
-	  <header>
-		<h3 class="tabs_involved">Asset Manager</h3>
-		<ul class="tabs">
-		  <li><a href="#tab1">Posts</a></li>
-		  <li><a href="#tab2">Comments</a></li>
-		</ul>
-	  </header>
-		
-			 
-	</article>
-	
-	<div class="clear"></div>
-	<article class="module width_half">
-	  <header>
-		<h3 class="tabs_involved">Mutasi Manager</h3>
-		<ul class="tabs">
-		  <li><a href="#tab1">Posts</a></li>
-		  <li><a href="#tab2">Comments</a></li>
-		</ul>
-	  </header>
-		
-			 
-	</article>
-	<article class="module width_half">
-	  <header>
-		<h3 class="tabs_involved">Penyeusaian Manager</h3>
-		<ul class="tabs">
-		  <li><a href="#tab1">Posts</a></li>
-		  <li><a href="#tab2">Comments</a></li>
-		</ul>
-	  </header>
-		
-			 
-	</article>
+	<div class="span9">
+			
+			<div class="row-fluid">
+				<div class="span6">PENERIMAAN<p>
+				Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+				Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+				Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+				
+				</div>
+				
+				<div class="span6">MUTASI<p>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				</div>
+			</div>
+				<hr>
+			<div class="row-fluid">
+				<div class="span6">ASET<p>
+				Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+				Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+				Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+				
+				</div>
+			
+				<div class="span6">PENYESUAIAN<p>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				Bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+				</div>
+			</div>
+			
+			
+	</div>
+</div>
+				
+			
