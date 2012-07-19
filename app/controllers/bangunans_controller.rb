@@ -41,11 +41,11 @@ class BangunansController < ApplicationController
   # POST /bangunans
   # POST /bangunans.json
   def create
-    @bangunan = Bangunan.new(params[:bangunan])
+    @bangunan = Bangunan.new(:kode => params[:kode], :keterangan => params[:keterangan])
 
     respond_to do |format|
       if @bangunan.save
-        format.html { redirect_to @bangunan, notice: 'Bangunan was successfully created.' }
+        format.html { redirect_to bangunans_url, notice: 'Bangunan was successfully created.' }
         format.json { render json: @bangunan, status: :created, location: @bangunan }
       else
         format.html { render action: "new" }
