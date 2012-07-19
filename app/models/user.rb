@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
   
-  before_save :create_remember_token
+  #before_save :create_remember_token
 
   private
 
