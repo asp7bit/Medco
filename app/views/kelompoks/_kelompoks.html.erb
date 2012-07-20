@@ -1,16 +1,18 @@
 <table>
   <tr>
     <th>Kode</th>
-    <th>Jenis</th>
+    <th>Tipe</th>
+	<th>Kelompok</th>
     <th>Keterangan</th>
-    <th>Kelompok</th>
+    <th>Jenis</th>
     <th colspan="2">Action</th>
   </tr>
   <% @kelompoks.each do |kelompok| %>
   <tr>
     <% @a = 0 %>
     <td><%= kelompok.kode %></td>
-    <td><%= kelompok.jenis %></td>
+    <td><%= kelompok.tipe %></td>
+	 <td><%= kelompok.kelompok_asset %></td>
     <td><%= kelompok.keterangan %></td>
     <% @parent_name.each do |g| %>
       <% if kelompok.parent_id == g.id %>

@@ -1,18 +1,20 @@
-<h1>Listing kelompoks</h1>
+<h1>Master PERALANNASSSSSSSSSSSSS</h1>
 
 <table>
   <tr>
     <th><%= sortable "kode", "Kode" %></th>
-    <th>Jenis</th>
-    <th><%= sortable "keterangan", "Keterangan" %></th>
+    <th>Tipe</th>
     <th>Kelompok</th>
+    <th><%= sortable "keterangan", "Keterangan" %></th>
+	<th>Jenis</th>
     <th colspan="2">Action</th>
   </tr>
   <% @kelompoks.each do |kelompok| %>
   <tr>
     <% @a = 0 %>
     <td><%= kelompok.kode %></td>
-    <td><%= kelompok.jenis %></td>
+    <td><%= kelompok.tipe %></td>
+	<td><%= kelompok.kelompok_asset %></td>
     <td><%= kelompok.keterangan %></td>
     <% @parent_name.each do |g| %>
       <% if kelompok.parent_id == g.id %>
@@ -31,4 +33,4 @@
 </table>
 <br />
 
-<%= link_to "new Kelompok", new_kelompok_path %>
+<%= link_to "New Peralatan", new_kelompok_path %>
