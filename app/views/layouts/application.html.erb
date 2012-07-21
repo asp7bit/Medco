@@ -8,10 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
+    <% if current_user!=nil? %>
     <%= render 'shared/header' %>
     <%= render 'shared/sidebar' %>
     <section id="main" class="column">
       <%= yield %>
     </section>
+    <% else %>
+    <section id="main" class="column">
+      <%= yield %>
+    </section>
+    <% end %>
   </body>
 </html>

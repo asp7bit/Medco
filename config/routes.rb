@@ -1,6 +1,10 @@
 Medco::Application.routes.draw do
   resources :users
+  resources :session, only: [:new, :create, :destroy]
 
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'session#new'
+  match "/signout", to: "session#destroy", via: :delete
   resources :kelompoks
 
   resources :tanahs

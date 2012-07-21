@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   
   #before_save :create_remember_token
+  
+  def full_name
+    #{firstname} #{last_name}
+  end
 
   private
 
