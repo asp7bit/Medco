@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120714060920) do
 
-  create_table "bangunans", :force => true do |t|
-    t.string   "kode"
-    t.text     "keterangan"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "divisis", :force => true do |t|
     t.string   "kode"
     t.text     "keterangan"
@@ -35,13 +28,6 @@ ActiveRecord::Schema.define(:version => 20120714060920) do
     t.string   "parent_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-  end
-
-  create_table "tanahs", :force => true do |t|
-    t.string   "kode"
-    t.text     "keterangan"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "unit_kerjas", :force => true do |t|

@@ -1,2 +1,0 @@
-module TanahsHelper
-end
