@@ -8,7 +8,7 @@ class Kelompok < ActiveRecord::Base
   
   def self.search(search)
     if search.present?
-      where("kode LIKE '%#{search}%' or keterangan LIKE '%#{search}%'")
+      where("kode LIKE '%#{search}%' or keterangan LIKE '%#{search}%' or parent_id LIKE '%#{search}%'")
 		else
 		  scoped
 	  end

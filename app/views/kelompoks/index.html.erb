@@ -1,12 +1,12 @@
-<h1>Master Peralatan</h1>
+<h1>Master Kelompok</h1>
 
 <table>
   <tr>
     <th><%= sortable "kode", "Kode" %></th>
-    <th>Tipe</th>
-    <th>Kelompok</th>
+    <th>Tipe Asset</th>
+    <th>Kelompok Asset</th>
     <th><%= sortable "keterangan", "Keterangan" %></th>
-	<th>Jenis</th>
+    <th><%= sortable "parent_id", "Jenis Asset" %></th>
     <th colspan="2">Action</th>
   </tr>
   <% @kelompoks.each do |kelompok| %>
@@ -26,6 +26,7 @@
     <td><%= "-" %></td>
     <% end %>
     <td><%= link_to 'Edit', edit_kelompok_path(kelompok) %></td>
+	<td></td>
     <td><%= link_to 'Delete', kelompok, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 
