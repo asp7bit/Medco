@@ -3,15 +3,19 @@ Medco::Application.routes.draw do
 
   resources :kelompoks
 
-  resources :tanahs
+  #resources :tanahs
 
-  resources :bangunans
+  #resources :bangunans
 
   resources :unit_kerjas
 
   resources :divisis
 
-  # The priority is based upon order of creation:
+  match '/kendaraan',:to=> "kelompoks#list_kendaraan"
+  match '/tanah',:to=> "kelompoks#list_tanah"
+  match '/bangunan',:to=> "kelompoks#list_bangunan"
+  
+   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
