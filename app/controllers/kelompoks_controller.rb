@@ -4,15 +4,30 @@ class KelompoksController < ApplicationController
   # GET /kelompoks
   # GET /kelompoks.json
   def index
-    #@kelompoks = Kelompok.find_all_by_kelompok_asset("Peralatan")
-	@kelompoks = Kelompok.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
+    @kelompoks = Kelompok.find_all_by_kelompok_asset("Peralatan")
+	#@kelompoks = Kelompok.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
     @parent_name = Kelompok.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @kelompoks }
     end
   end
-     
+  
+  def list_kendaraan
+    @kelompoks = Kelompok.find_all_by_kelompok_asset("Kendaraan")
+	@parent_name = Kelompok.all
+  end
+  
+  def list_bangunan
+    @kelompoks = Kelompok.find_all_by_kelompok_asset("Bangunan")
+	@parent_name = Kelompok.all
+  end
+  
+  def list_tanah
+    @kelompoks = Kelompok.find_all_by_kelompok_asset("Tanah")
+	@parent_name = Kelompok.all
+  end
+  
   # GET /kelompoks/1
   # GET /kelompoks/1.json
   def show
