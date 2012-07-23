@@ -1,0 +1,18 @@
+<% provide(:title, "Sign in") %>
+<h1>Sign in</h1>
+<div class="container">
+  <%= form_for(:session, url: sessions_path, :class=>"well form-inline") do |f| %>
+  <p>
+    <%= f.text_field :first_name, :class=>"input-xlarge", :placeholder=>"username" %>
+  </p>
+      
+  <p>
+    <%= f.password_field :password, :class=>"input-xlarge", :placeholder=>"password" %>
+  </p>
+
+  <p>
+    <%= f.submit "Sign in", class: "btn" %>
+    New user? <%= link_to "Sign up now!", signup_path %> 
+  <p>
+  <% end %>
+</div>

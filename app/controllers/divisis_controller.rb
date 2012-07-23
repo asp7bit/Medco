@@ -1,4 +1,5 @@
 class DivisisController < ApplicationController
+  before_filter :signed_in_user
   helper_method :sort_column, :sort_direction
   # GET /divisis
   # GET /divisis.json

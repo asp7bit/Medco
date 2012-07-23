@@ -1,4 +1,5 @@
 class KelompoksController < ApplicationController
+  before_filter :signed_in_user
   before_filter :set_parent_category, :only => [:edit, :new, :create]
   helper_method :sort_column, :sort_direction
   # GET /kelompoks

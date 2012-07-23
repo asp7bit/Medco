@@ -1,19 +1,15 @@
 Medco::Application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   resources :users
 
   resources :kelompoks
 
-  #resources :tanahs
-
-  #resources :bangunans
-
   resources :unit_kerjas
 
   resources :divisis
-
-  match '/kendaraan',:to=> "kelompoks#list_kendaraan"
-  match '/tanah',:to=> "kelompoks#list_tanah"
-  match '/bangunan',:to=> "kelompoks#list_bangunan"
   
    # The priority is based upon order of creation:
   # first created -> highest priority.
