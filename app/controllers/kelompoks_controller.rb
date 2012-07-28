@@ -16,7 +16,7 @@ class KelompoksController < ApplicationController
   
   def list_kendaraan
     @kelompoks = Kelompok.find_all_by_kelompok_asset("Kendaraan")
-	@parent_name = Kelompok.all
+	  @parent_name = Kelompok.all
   end
   
   def list_bangunan
