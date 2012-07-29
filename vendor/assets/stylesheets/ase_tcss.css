@@ -1,0 +1,56 @@
+body {
+  font:0.8em arial,sans-serif;
+	}
+	
+ul {
+  margin:0;
+  padding:0;
+}
+
+#logo {
+margin:0;
+height:70px;
+}
+
+#header_background{
+  margin: 0 10px;
+  padding: 0 50px;
+}
+	
+#header {
+  margin-bottom:10px;
+}
+
+#menu ul {
+  margin:0 0 0 600px;
+  list-style:none;
+  }
+  
+#menu ul li {
+
+  float:left;
+  }
+  
+ .clear{
+	clear:both;
+ }
+ 
+#menu ul li a {
+  margin:20px;
+  text-decoration:none;
+  }
+  
+#content {
+  background:red;
+  width:1093px;
+  float:right;
+  height:400px;
+}
+
+#side {
+  background:#cccccc;
+  width:240px;
+  float:left;
+  height:400px;
+  border-bottom: 1px solid #aaa;
+}

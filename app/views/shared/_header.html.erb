@@ -5,15 +5,15 @@
         <ul class="nav pull-left">
           <li class="active"><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", "#" %></li>
-          <% if signed_in? %>
+          <%# if signed_in? %>
             <li><%= link_to "Users", users_path %></li>
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Settings", edit_user_path(current_user) %></li>
             <li class="divider"></li>
             <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-          <% else %>
+          <% #else %>
             <li><%= link_to "Sign in", signin_path %></li>
-          <% end %>
+          <%# end %>
         </ul>
         <form class="navbar-form pull-right">
           <input type="text" class="search-query" placeholder="Search">

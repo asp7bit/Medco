@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714060940) do
+ActiveRecord::Schema.define(:version => 20120728165922) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "kode"
+    t.string   "tipe"
+    t.string   "kelompok_asset"
+    t.text     "keterangan"
+    t.string   "parent_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "divisis", :force => true do |t|
     t.string   "kode"

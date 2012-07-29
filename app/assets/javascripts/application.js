@@ -12,6 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require image_fade
+//= require jquery.galleriffic
+//= require jquery.min
+//= require jquery.opacityrollover
+//= require jquery.sooperfish
+//= require modernizr-1.5.min
+//= require jquery.easing-sooper
+
 //= require_tree .
 
 $(document).ready(function() 
