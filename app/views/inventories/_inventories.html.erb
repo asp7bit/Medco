@@ -1,0 +1,40 @@
+<table>
+  <tr>
+    <th><%= sortable "no", "No" %></th>
+    <th><%= sortable "kode_inventaris", "Kode Inventaris" %></th>
+    <th><%= sortable "nama_asset", "Nama Asset" %></th>
+    <th>Jenis Asset</th>
+    <th>Merk</th>
+    <th>Material</th>
+    <th>Harga Perolehan</th>
+    <th>Jumlah Baik</th>
+    <th>Jumlah Rusak</th>
+    <th>Lokasi</th>
+    <th>Keterangan</th>
+    <th colspan="2">Action</th>
+  </tr>
+
+  <% @inventories.each_with_index do |inventory, idx| %>
+  <tr>
+    <td><%= params[:page].nil? ? idx + 1 : 15 * (params[:page].to_i  - 1) + idx + 1 %></td>
+    <td><%= inventory.kode_inventaris %></td>
+    <td><%= inventory.nama_asset %></td>
+    <td><%= inventory.jenis_asset %></td>
+    <td><%= inventory.merk %></td>
+    <td><%= inventory.material %></td>
+    <td><%= inventory.harga %></td>
+    <td><%= inventory.qty_baik %></td>
+    <td><%= inventory.qty_rusak %></td>
+    <td><%= inventory.lokasi %></td>
+    <td><%= inventory.keterangan %></td>
+    <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
+    <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+  <div class="pagination">
+   <%= will_paginate @inventory %>
+  </div>
+<br />
+
+<%= link_to 'New Asset', new_inventory_path %>

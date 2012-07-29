@@ -1,39 +1,27 @@
-<div id="space"></space></div>
-	    <div class="container">
-			<div class="row">
-				<div class="span3">
-					
-					<aside id="sidebar" class="column">
-					  <form class="quick_search">
-					    <input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
-					  </form>
-					  <hr/>
-					    <h3>Master</h3>
-						<ul class="toggle">
-						<li class="icn_tags"><%= link_to "Kelompok", kelompoks_path %></li>
-						<li class="icn_new_article"><%= link_to "Divisi", divisis_path %></li>
-						<li class="icn_edit_article"><%= link_to "Unit kerja", unit_kerjas_path %></li>									    
-						</ul>
-						<h3>Transaksi</h3>
-						<ul class="toggle">
-						  <li class="icn_add_user"><a href="#">Asset</a></li>
-						  <li class="icn_view_users"><a href="#">Penerimaan</a></li>
-						  <li class="icn_profile"><a href="#">Mutasi</a></li>
-						   <li class="icn_profile"><a href="#">Penyesusaian</a></li>
-						</ul>
-						<h3>Laporan</h3>
-						<ul class="toggle">
-						  <li class="icn_add_user"><a href="#">Asset</a></li>
-						  <li class="icn_view_users"><a href="#">Penerimaan</a></li>
-						  <li class="icn_profile"><a href="#">Mutasi</a></li>
-						   <li class="icn_profile"><a href="#">Penyesusaian</a></li>
-						</ul>
-						
-							
-						  <footer>
-						    <hr />
-							  <p><strong>Copyright &copy; 2011 Medco Asset</strong></p>
-							</footer>
-					</aside>
-				</div>
-	
+<aside id="sidebar" class="column">
+  <% if signed_in? %>
+	<h3>Master</h3>
+	<ul class="toggle">
+	  <li class="icn_tags"><%= link_to "Kelompok", categories_path %></li>
+	  <li class="icn_new_article"><%= link_to "Divisi", divisions_path %></li>
+	  <li class="icn_edit_article"><%= link_to "Unit kerja", branches_path %></li>		    
+	</ul>
+	<h3>Transaksi</h3>
+    <ul class="toggle">
+	  <li class="icn_add_user"><%= link_to "Inventaris", inventories_path %></li>
+	  <li class="icn_view_users"><a href="#">Penerimaan</a></li>
+	  <li class="icn_profile"><a href="#">Mutasi</a></li>
+	  <li class="icn_profile"><a href="#">Penyesusaian</a></li>
+	</ul>
+	<h3>Laporan</h3>
+	<ul class="toggle">
+	  <li class="icn_add_user"><a href="#">Asset</a></li>
+	  <li class="icn_view_users"><a href="#">Penerimaan</a></li>
+	  <li class="icn_profile"><a href="#">Mutasi</a></li>
+	  <li class="icn_profile"><a href="#">Penyesusaian</a></li>
+	</ul>
+	<footer>
+	  <p><strong>Copyright &copy; 2011 Medco Asset</strong></p>
+	</footer>
+  <% end %>
+</aside>

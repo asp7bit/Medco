@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Kode:</b>
+  <%= @branch.kode %>
+</p>
+
+<p>
+  <b>Keterangan:</b>
+  <%= @branch.keterangan %>
+</p>
+
+
+<%= link_to 'Edit', edit_branch_path(@branch) %> |
+<%= link_to 'Back', branches_path %>

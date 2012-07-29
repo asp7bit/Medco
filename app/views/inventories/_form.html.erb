@@ -1,0 +1,61 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :kode_inventaris %><br />
+    <%= f.text_field :kode_inventaris %>
+  </div>
+  <div class="field">
+    <%= f.label :nama_asset %><br />
+    <%= f.text_field :nama_asset %>
+  </div>
+  <div class="field">
+    <%= f.label :jenis_asset %><br />
+    <%= f.text_field :jenis_asset %>
+  </div>
+  <div class="field">
+    <%= f.label :merk %><br />
+    <%= f.text_field :merk %>
+  </div>
+  <div class="field">
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </div>
+  <div class="field">
+    <%= f.label :material %><br />
+    <%= f.text_field :material %>
+  </div>
+  <div class="field">
+    <%= f.label :harga %><br />
+    <%= f.text_field :harga %>
+  </div>
+  <div class="field">
+    <%= f.label :qty_baik %><br />
+    <%= f.text_field :qty_baik %>
+  </div>
+  <div class="field">
+    <%= f.label :qty_rusak %><br />
+    <%= f.text_field :qty_rusak %>
+  </div>
+  <div class="field">
+    <%= f.label :lokasi %><br />
+    <%= f.text_field :lokasi %>
+  </div>
+  <div class="field">
+    <%= f.label :keterangan %><br />
+    <%= f.text_area :keterangan %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

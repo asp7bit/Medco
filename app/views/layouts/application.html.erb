@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Medco</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  
-  <%= csrf_meta_tags %>
+  <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
 </head>
   <body>
     <%= render 'shared/header' %>
-    <%= render 'shared/sidebar' %>
-    <section id="main" class="column">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <%= render 'shared/sidebar' %>
+        </div>
+           <div class="span9">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
       <%= yield %>
-    </section>
+    </div>
+      </div>
+    </div>
+ 
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

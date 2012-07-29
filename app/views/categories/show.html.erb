@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Kode:</b>
+  <%= @category.kode %>
+</p>
+
+<p>
+  <b>Tipe:</b>
+  <%= @category.tipe %>
+</p>
+<p>
+  <b>Kelompok Asset:</b>
+  <%= @category.kelompok_asset %>
+</p>
+<p>
+  <b>Keterangan:</b>
+  <%= @category.keterangan %>
+</p>
+
+<p>
+  <b>Jenis Asset:</b>
+  <% @parent_kelompok.each do |parent| %>
+  <%= parent.keterangan %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> | <%= link_to 'Back to Kelompok', categories_path %>

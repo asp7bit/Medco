@@ -37,7 +37,3 @@ group :test do
   gem 'spork', '0.9.0'
   gem 'launchy', '2.1.0'
 end
-
-group :production do
-  gem 'pg', '0.12.2'
-end

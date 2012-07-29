@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :password, :password_confirmation, :slug, :unit_kerja
+  
   has_secure_password
   
   validates :first_name, :presence => true, :format => {:with => /[a-zA-Z\s]+$/}
@@ -9,9 +10,13 @@ class User < ActiveRecord::Base
   
   before_save :create_remember_token
 
+  def full_name
+    #{first_name} #{last_name}
+  end
+
   private
 
-    def create_remember_token
+  def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
 end

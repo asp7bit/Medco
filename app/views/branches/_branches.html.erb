@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th><%= sortable "no", "No" %></th>
+    <th><%= sortable "kode", "Kode" %></th>
+    <th><%= sortable "keterangan", "Keterangan" %></th>
+    <th colspan="2">Action</th>
+  </tr>
+
+<% @branches.each_with_index do |branch, idx| %>
+  <tr>
+    <td><%= params[:page].nil? ? idx + 1 : 15 * (params[:page].to_i  - 1) + idx + 1 %></td>
+    <td><%= branch.kode %></td>
+    <td><%= branch.keterangan %></td>
+    <td><%= link_to 'Edit', edit_branch_path(branch) %></td>
+    <td><%= link_to 'Delete', branch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+  <div class="pagination">
+   <%= will_paginate @branch %>
+  </div>
+<br />
+
+<%= link_to 'New Unit kerja', new_branch_path %>

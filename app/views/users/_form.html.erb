@@ -1,37 +1,38 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for(@user, :class=>"form-horizontal") do |f| %>
+  <fieldset>
+    <legend>User</legend>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="control-group">
+      <%= f.label :first_name, :class=>"control-label", :for=>"first_name" %>
+      <div class="controls">
+        <%= f.text_field :first_name, :class=>"input-xlarge", :id=>"first_name" %>
+      </div>
+      <%= f.label :last_name, :class=>"control-label", :for=>"last_name" %>
+      <div class="controls">
+      <%= f.text_field :last_name, :class=>"input-xlarge", :id=>"last_name" %>
+      </div>
+      <%= f.label :unit_kerja, :class=>"control-label", :for=>"unit_kerja" %>
+      <div class="controls">
+        <%= f.text_field :unit_kerja, :class=>"input-xlarge", :id=>"unit_kerja" %>
+      </div>
+      <%= f.label :password, :class=>"control-label", :for=>"password" %>
+      <div class="controls">
+        <%= f.password_field :password, :class=>"input-xlarge", :id=>"password" %>
+      </div>
+      <%= f.label :confirm_password, :class=>"control-label", :for=>"confirm_password" %>
+      <div class="controls">
+        <%= f.password_field :password_confirmation, :class=>"input-xlarge", :for=>"confirm_password" %>
+      </div>
+      <%= f.submit "Save Change", :class=>"btn btn-primary" %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :password_digest %><br />
-    <%= f.text_field :password_digest %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br />
-    <%= f.text_field :slug %>
-  </div>
-  <div class="field">
-    <%= f.label :unit_kerja %><br />
-    <%= f.text_field :unit_kerja %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </fieldset>
 <% end %>
