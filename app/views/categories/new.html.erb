@@ -1,10 +1,5 @@
-<h2>New Category</h2>
-<%= form_for(@category) do |f| %>
-  <fieldset>
-  	<legend>Category</legend>
-	<%= f.label :kode %>
-	<%= f.text_field :kode %>
-	<%= f.label :keterangan %>
-	<%= f.text_field :keterangan %>
-  </fieldset>
-<% end %>
+<h1>New CATEGORY</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back to Kelompok', categories_path %> 

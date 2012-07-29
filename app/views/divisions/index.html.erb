@@ -1,0 +1,8 @@
+<h1>Master Divisions LAIN DIVISI</h1>
+  <%= form_tag divisions_path, :method => 'get', :id => "divisions_search" do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %> 
+  <% end %>
+	<div>
+    <%= render 'divisions' %>
+  </div>

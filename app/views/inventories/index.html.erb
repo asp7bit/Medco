@@ -1,0 +1,8 @@
+<h1>Master INVENTARIS Asset </h1>
+  <%= form_tag inventories_path, :method => 'get', :id => "inventories_search" do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %> 
+  <% end %>
+  <div>
+    <%= render 'inventories' %>
+  </div>

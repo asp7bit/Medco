@@ -5,11 +5,13 @@ Medco::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
   resources :users
 
-  resources :kelompoks
+  resources :categories
 
-  resources :unit_kerjas
+  resources :branches
 
-  resources :divisis
+  resources :divisions
+
+  resources :inventories
   
    # The priority is based upon order of creation:
   # first created -> highest priority.

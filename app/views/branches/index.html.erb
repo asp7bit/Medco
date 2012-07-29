@@ -1,0 +1,8 @@
+<h1>Master BRANCH Unit Kerja</h1>
+<%= form_tag branches_path, :method => 'get', :id => "branches_search" do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+  <% end %>
+	<div>
+    <%= render 'branches' %>
+  </div>

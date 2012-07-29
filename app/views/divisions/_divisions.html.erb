@@ -1,0 +1,24 @@
+<table>
+  <tr>
+	  <th><%= sortable "no", "No" %></th>
+    <th><%= sortable "kode", "Kode" %></th>
+    <th><%= sortable "keterangan", "Keterangan" %></th>
+    <th colspan="2">Action</th>
+  </tr>
+
+<% @divisions.each_with_index do |division, idx| %>
+  <tr>
+	  <td><%= params[:page].nil? ? idx + 1 : 15 * (params[:page].to_i  - 1) + idx + 1 %></td>
+    <td><%= division.kode %></td>
+    <td><%= division.keterangan %></td>
+    <td><%= link_to 'Edit', edit_division_path(division) %></td>
+    <td><%= link_to 'Delete', division, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+  <div class="pagination">
+   <%= will_paginate @division %>
+  </div>
+<br />
+
+<%= link_to 'New Divisi', new_division_path %>

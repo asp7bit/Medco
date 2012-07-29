@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728165922) do
+ActiveRecord::Schema.define(:version => 20120728205731) do
+
+  create_table "branches", :force => true do |t|
+    t.string   "kode"
+    t.text     "keterangan"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "kode"
@@ -23,28 +30,27 @@ ActiveRecord::Schema.define(:version => 20120728165922) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "divisis", :force => true do |t|
+  create_table "divisions", :force => true do |t|
     t.string   "kode"
     t.text     "keterangan"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "kelompoks", :force => true do |t|
-    t.string   "kode"
-    t.string   "tipe"
-    t.string   "kelompok_asset"
+  create_table "inventories", :force => true do |t|
+    t.string   "kode_inventaris"
+    t.string   "nama_asset"
+    t.string   "jenis_asset"
+    t.string   "merk"
+    t.string   "model"
+    t.string   "material"
+    t.decimal  "harga",           :precision => 10, :scale => 0
+    t.integer  "qty_baik"
+    t.integer  "qty_rusak"
+    t.string   "lokasi"
     t.text     "keterangan"
-    t.string   "parent_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "unit_kerjas", :force => true do |t|
-    t.string   "kode"
-    t.string   "keterangan"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
   end
 
   create_table "users", :force => true do |t|
