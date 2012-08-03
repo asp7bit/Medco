@@ -1,6 +1,7 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
+      <%= link_to current_user.full_name, user_path(current_user), :class => "brand" unless current_user.nil? %>
       <%= link_to "Medco Foundation", root_path, :class => "brand" %>
         <ul class="nav pull-left">
           <li class="active"><%= link_to "Home", root_path %></li>

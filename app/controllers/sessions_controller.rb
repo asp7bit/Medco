@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = User.find_by_first_name(params[:session][:first_name])
+    user = User.find_by_slug(params[:session][:slug])
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_to user
+      redirect_to root_path
     else
       flash.now[:error] = 'Invalid user/password combination'
       render 'new'

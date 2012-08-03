@@ -1,0 +1,37 @@
+<table>
+  <tr>
+    <th>Kode</th>
+    <th>Tipe</th>
+	  <th>Kelompok</th>
+    <th>Keterangan</th>
+    <th>Jenis</th>
+    <th colspan="2">Action</th>
+  </tr>
+  <% @categories.each do |category| %>
+  <tr>
+    <% @a = 0 %>
+    <td><%= category.kode %></td>
+    <td><%= category.tipe %></td>
+	  <td><%= category.kelompok_asset %></td>
+    <td><%= category.keterangan %></td>
+    <% @parent_name.each do |g| %>
+      <% if category.parent_id == g.id %>
+      <td><%= g.keterangan %></td>
+      <% @a = 1 %>
+      <% end %>
+    <% end %>
+    <% if @a == 0 %>
+    <td><%= "-" %></td>
+    <% end %>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
+    <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+
+<% end %>
+</table>
+<div class="pagination">
+  <%#= will_paginate @category %>
+</div>
+<br />
+
+<%= link_to "new Kelompok", new_category_path %>

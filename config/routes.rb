@@ -3,6 +3,10 @@ Medco::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+  match '/kendaraan', to: 'categories#list_kendaraan'
+  match '/bangunan', to: 'categories#list_bangunan'
+  match '/tanah', to: 'categories#list_tanah'
+
   resources :users
 
   resources :categories

@@ -1,8 +1,7 @@
 class BranchesController < ApplicationController
   before_filter :signed_in_user
   helper_method :sort_column, :sort_direction
-  # GET /divisis
-  # GET /divisis.json
+  
   def index
     @branches = Branch.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
 
@@ -12,8 +11,6 @@ class BranchesController < ApplicationController
     end
   end
 
-  # GET /divisis/1
-  # GET /divisis/1.json
   def show
     @branch = Branch.find(params[:id])
 
@@ -23,8 +20,6 @@ class BranchesController < ApplicationController
     end
   end
 
-  # GET /divisis/new
-  # GET /divisis/new.json
   def new
     @branch = Branch.new
 
@@ -34,13 +29,10 @@ class BranchesController < ApplicationController
     end
   end
 
-  # GET /divisis/1/edit
   def edit
     @branch = Branch.find(params[:id])
   end
 
-  # POST /divisis
-  # POST /divisis.json
   def create
     @branch = Branch.new(params[:branch])
 
@@ -55,8 +47,6 @@ class BranchesController < ApplicationController
     end
   end
 
-  # PUT /divisis/1
-  # PUT /divisis/1.json
   def update
     @branch = Branch.find(params[:id])
 
@@ -71,8 +61,6 @@ class BranchesController < ApplicationController
     end
   end
 
-  # DELETE /divisis/1
-  # DELETE /divisis/1.json
   def destroy
     @branch = Branch.find(params[:id])
     @branch.destroy
