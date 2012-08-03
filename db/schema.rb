@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20120728205731) do
     t.string   "kode_inventaris"
     t.string   "nama_asset"
     t.string   "jenis_asset"
-    t.string   "merk"
-    t.string   "model"
-    t.string   "material"
+    t.string   "merk_asset"
+    t.string   "model_asset"
+    t.string   "material_asset"
     t.decimal  "harga",           :precision => 10, :scale => 0
     t.integer  "qty_baik"
     t.integer  "qty_rusak"

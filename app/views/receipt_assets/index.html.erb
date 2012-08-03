@@ -1,0 +1,8 @@
+<h1>Penerimaan INVENTARIS Asset </h1>
+  <%= form_tag receipt_assets_path, :method => 'get', :id => "receipt_assets_search" do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %> 
+  <% end %>
+  <div>
+    <%= render 'receipt_assets' %>
+  </div>

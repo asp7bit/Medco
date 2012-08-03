@@ -3,6 +3,11 @@ Medco::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+  match '/kendaraan', to: 'categories#list_kendaraan'
+  match '/bangunan', to: 'categories#list_bangunan'
+  match '/peralatan', to: 'categories#list_peralatan'
+  match '/tanah', to: 'categories#list_tanah'
+
   resources :users
 
   resources :categories
@@ -12,6 +17,8 @@ Medco::Application.routes.draw do
   resources :divisions
 
   resources :inventories
+
+  resources :receipt_assets
   
    # The priority is based upon order of creation:
   # first created -> highest priority.

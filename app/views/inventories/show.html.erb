@@ -1,29 +1,48 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Kode:</b>
-  <%= @category.kode %>
-</p>
-
-<p>
-  <b>Tipe:</b>
-  <%= @category.tipe %>
+  <b>Kode Inventaris:</b>
+  <%= @inventory.kode_inventaris %>
 </p>
 <p>
-  <b>Kelompok Asset:</b>
-  <%= @category.kelompok_asset %>
+  <b>Nama Asset:</b>
+  <%= @inventory.nama_asset %>
 </p>
-<p>
-  <b>Keterangan:</b>
-  <%= @category.keterangan %>
-</p>
-
 <p>
   <b>Jenis Asset:</b>
-  <% @parent_kelompok.each do |parent| %>
-  <%= parent.keterangan %>
-  <% end %>
+  <%= @inventory.jenis_asset %>
+</p>
+<p>
+  <b>Merk:</b>
+  <%= @inventory.merk_asset %>
+</p>
+<p>
+  <b>Model:</b>
+  <%= @inventory.model_asset %>
+</p>
+<p>
+  <b>Material:</b>
+  <%= @inventory.material_asset %>
+</p>
+<p>
+  <b>Harga:</b>
+  <%= @inventory.harga %>
+</p>
+<p>
+  <b>Jumlah Baik:</b>
+  <%= @inventory.qty_baik %>
+</p>
+<p>
+  <b>Jumlah Rusak:</b>
+  <%= @inventory.qty_rusak %>
+</p>
+<p>
+  <b>Lokasi:</b>
+  <%= @inventory.lokasi %>
+</p>
+<p>
+  <b>Keteragan:</b>
+  <%= @inventory.keterangan %>
 </p>
 
-
-<%= link_to 'Edit', edit_category_path(@category) %> | <%= link_to 'Back to Kelompok', categories_path %>
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> | <%= link_to 'Back to Inventories', inventories_path %>

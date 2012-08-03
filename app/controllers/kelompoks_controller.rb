@@ -23,6 +23,11 @@ class KelompoksController < ApplicationController
     @kelompoks = Kelompok.find_all_by_kelompok_asset("Bangunan")
 	@parent_name = Kelompok.all
   end
+
+  def list_peralatan
+    @kelompoks = Kelompok.find_all_by_kelompok_asset("Peralatan")
+  @parent_name = Kelompok.all
+  end
   
   def list_tanah
     @kelompoks = Kelompok.find_all_by_kelompok_asset("Tanah")

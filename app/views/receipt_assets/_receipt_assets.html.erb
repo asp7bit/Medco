@@ -1,0 +1,30 @@
+<table>
+  <tr>
+    <th>Nomor Penerimaan</th>
+    <th>Jenis Asset</th>
+    <th>Merk</th>
+    <th>Material</th>
+    <th>Harga Perolehan</th>
+    <th>Jumlah Baik</th>
+    <th>Jumlah Rusak</th>
+    <th>Lokasi</th>
+    <th>Keterangan</th>
+    <th colspan="2">Action</th>
+  </tr>
+
+<% @receipt_assets.each_with_index do |receipt_asset, idx| %>
+  <tr>
+    <td><%= params[:page].nil? ? idx + 1 : 15 * (params[:page].to_i  - 1) + idx + 1 %></td>
+    <td><%= receipt_asset. %></td>
+    <td><%= receipt_asset.keterangan %></td>
+    <td><%= link_to 'Edit', edit_receipt_asset_path(receipt_asset) %></td>
+    <td><%= link_to 'Delete', receipt_asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+  <div class="pagination">
+   <%= will_paginate @receipt_asset %>
+  </div>
+<br />
+
+<%= link_to 'New Penerimaan', new_receipt_asset_path %>

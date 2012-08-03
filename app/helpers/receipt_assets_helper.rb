@@ -1,0 +1,2 @@
+module ReceiptAssetsHelper
+end
