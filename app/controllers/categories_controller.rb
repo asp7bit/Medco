@@ -15,11 +15,14 @@ before_filter :signed_in_user
   def list_kendaraan
     @categories = Category.find_all_by_kelompok_asset("Kendaraan")
 	  @parent_name = Category.all
+<<<<<<< HEAD
   end
 
   def list_peralatan
     @categories = Category.find_all_by_kelompok_asset("Peralatan")
   @parent_name = Category.all
+=======
+>>>>>>> a5479d4f1f12e0bb8d71c93cb898c834b242b26d
   end
   
   def list_bangunan
